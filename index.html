@@ -10,8 +10,6 @@
 
     <!-- It's recommended to add the below 2 links to improve performance --> 
 
-    <link rel="preconnect" href="//privacy-proxy.usercentrics.eu">
-    <link rel="preload" href="//privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js" as="script">
 
     
     <!-- This is the UC Draft script -->
@@ -51,9 +49,7 @@
 
     <!-- Note: The SDP only recognizes the predefined DPS templates. A mapping is required in the case of a 
         custom DSP template -->
-    
-    <script type="application/javascript" 
-      src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"></script>
+ 
 
     <!-- Custom DPS templates can be supported by mapping the template ID of the custom template with the respective predefined
          template. For that, the following script is to be added -->
@@ -105,23 +101,6 @@
 
     <!-- 1) With Javasctipt variables -->
 
-    <script>
-      uc.setCustomTranslations({
-        //English
-        en: {
-          ACCEPT: "My Accept button",
-          DEFAULT_DESCRIPTION: "My Custom Description", //If there is something wrong with the CMP, NOT_PERMITTED_TEXT is shown instead of DEFAULT_DESCRIPTION
-          DEFAULT_TITLE: "My Customn Title", 
-          POWERED_BY: "My website"
-        },
-        //German
-        de: {
-          ACCEPT: "Custom DE Accept",
-          DEFAULT_DESCRIPTION: "Custom DE Description",
-          DEFAULT_TITLE: "Custom DE Title"
-        }
-      });
-    </script>
 
     <!-- Reload Page on Consent Changes -->
 
@@ -134,9 +113,7 @@
     
     -->
 
-    <script>
-      uc.reloadOnOptIn('BJz7qNsdj-7'); //reload page on YouTube opt-in 
-    </script>
+
 
     <!-- In case the consent is revoked, a fallback option for a page reload might be needed to block the technologies correctly 
 
@@ -144,9 +121,7 @@
          In our case, this was added at the top of this file as a link.
     -->
 
-    <script>
-      uc.reloadOnOptOut('BJz7qNsdj-7'); // reload page on YouTube opt-out
-    </script>
+
 
     <!-- Styling Customization (CSS) -->
 
@@ -155,34 +130,10 @@
          Recommendation: Use the 'descendant combinator' to make the rules more specific
     -->
 
-    <style>
-      .uc-embedding-container .uc-embedding-buttons .uc-embedding-accept {
-        background-color: green;
-      }
-    </style>
-
-    <style>
-      .uc-embed-toggle-button.toggle-on > svg g path:first-child {
-        fill: #00FF00;
-      }
-
-      .uc-embed-toggle-button.toggle-off > svg g path:first-child{
-        fill: #FF0000;
-      }
-    </style>
 
     <!-- Google Analytics -->
     
-    <!-- CB --> <!-- <script type="text/plain" data-cookieconsent="marketing"> --> 
-    <!-- UC --> <script type="text/plain" data-usercentrics="Google Analytics"> 
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    
-    ga('create', 'UA-183442640-1', 'auto');
-    ga('send', 'pageview');    
-    </script> 
+
 
    
 
@@ -229,21 +180,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <!-- Window Event -->
 
-    <script>
-      window.addEventListener("ucEvent", function(e) {
-        if (e.detail && e.detail.event = "consent_status") {
-          //check for consent status of service "Google Analytics"
-          if(e.detail['Google Analytics'] == true) {
-            console.log('Google Analytics has consent');
-          }
-          else {
-            console.log('Google Analytics has no consent');
-          }
-        }
-      });
-      
-    </script>
-    
   
   </head>
 
@@ -267,8 +203,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <img src="https://usercentrics.com/wp-content/uploads/2020/04/190208-UCS-Logo-800px.png" alt="uc-logo">    
 
     <!-- Data Subject Request (DSR) intake form-->
-    <div id="usercentricsDSRForm"></div><script src="https://dsr.consent.usercentrics.eu/dsr_url.js"
-    dsr_text="INSERT_YOUR_TEXT_HERE"></script>
+
 
     <!-- This is the CB Cookie Declaration script -->
     
